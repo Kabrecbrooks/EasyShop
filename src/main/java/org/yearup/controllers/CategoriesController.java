@@ -54,8 +54,8 @@ public class CategoriesController
     @GetMapping("{categoryId}/products")
     public List<Product> getProductsById(@PathVariable int categoryId)
     {
-        // get a list of product by categoryId
-        return null;
+        // get a list of products by categoryId
+        return productDao.getByCategoryId(categoryId);
     }
 
     // add annotation to call this method for a POST action
