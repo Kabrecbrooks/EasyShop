@@ -1,5 +1,6 @@
 package org.yearup.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,17 +17,23 @@ import java.util.List;
 // add annotation to allow cross site origin requests
 public class CategoriesController
 {
-    private CategoryDao categoryDao;
-    private ProductDao productDao;
+    private final CategoryDao categoryDao;
 
+    @Autowired
+    private ProductDao productDao; // Add this field if not already present
 
-    // create an Autowired controller to inject the categoryDao and ProductDao
+    @Autowired
+    public CategoriesController(CategoryDao categoryDao)
+    {
+        this.categoryDao = categoryDao;
+    }
 
     // add the appropriate annotation for a get action
+    @GetMapping
     public List<Category> getAll()
     {
         // find and return all categories
-        return null;
+        return categoryDao.getAllCategories();
     }
 
     // add the appropriate annotation for a get action
