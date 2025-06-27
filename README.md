@@ -39,9 +39,4 @@ This capstone includes:
 - Postman
 - Git
 
-### Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/easyshop-api.git
-   cd easyshop-api
