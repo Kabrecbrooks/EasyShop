@@ -18,6 +18,7 @@ import java.util.List;
 // add annotation to allow cross site origin requests
 @RestController
 @RequestMapping("/categories")
+@CrossOrigin
 public class CategoriesController{
 
     private final CategoryDao categoryDao;
@@ -30,7 +31,7 @@ public class CategoriesController{
     }
 
     // add the appropriate annotation for a get action
-    @GetMapping
+    @GetMapping()
     public List<Category> getAll()
     {
         // find and return all categories

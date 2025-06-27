@@ -22,6 +22,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     {
         String sql = "SELECT * FROM categories";
         List<Category> categories = new ArrayList<>();
+
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery())
